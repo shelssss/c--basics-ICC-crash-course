@@ -6,24 +6,25 @@ using System.Threading.Tasks;
 
 namespace infosoft_crash_course
 {
-    public class Students
+    public class Students : Professor
     {
-        string firstName,
-               lastName,
-               year,
-               course,
-               section;
-        float midtermGrade, finalGrade;
+        string firstName { get; set; }
+        string lastName { get; set; }
+        string year { get; set; }
+        string course {  get; set; }
+        string section { get; set; }
 
-        public Students(string firstName, string lastName, string year, string course, string section, float midtermGrade, float finalGrade)
+
+
+        public Students(string firstName, string lastName, string year, string course, string section, string professorName, string professorDepartment, float midtermGrade, float finalGrade)
+            : base(professorName, professorDepartment, midtermGrade, finalGrade)
         {
             this.firstName = firstName;
             this.lastName = lastName;
             this.year = year;
             this.course = course;
             this.section = section;
-            this.midtermGrade = midtermGrade;
-            this.finalGrade = finalGrade;
+            
         }
 
         public string introduceStudent()
@@ -34,41 +35,16 @@ namespace infosoft_crash_course
                     + "\n" + "From " + course
                     + "\n" + section;
         }
-        
-        public string evaluateGrade(float midtermGrade, float finalGrade)
+
+        public void gradeReport()
         {
-            float avgGrade = (midtermGrade + finalGrade)/2;
-
-            Console.WriteLine("Average Grade: " + avgGrade);
-
-            if (avgGrade < 75)
-            {
-                Console.WriteLine("Failed");
-            }
-            else if (avgGrade <= 90)
-            {
-                Console.WriteLine("Passed");
-            }
-            else if(avgGrade <= 95)
-            {
-                Console.WriteLine("with Honors");
-            }
-            else if (avgGrade <= 98)
-            {
-                Console.WriteLine("with High Honors");
-            }
-            else if (avgGrade <= 100)
-            {
-                Console.WriteLine("with Highest Honors");
-            }
-            else
-            {
-                Console.WriteLine("Abnormal na grado");
-            }
-
-   
-                return "" + avgGrade;
-           
+            Console.WriteLine("Grade Report.....");
+            Console.WriteLine("Student Name: " +  firstName + " " + lastName); 
+            Console.WriteLine("Prepared By :" + professorName);
+            base.evaluateGrade();
         }
+        
+        
+        
     }
 }

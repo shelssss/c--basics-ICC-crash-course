@@ -6,7 +6,8 @@ namespace infosoft_crash_course
     class Program
     {
         static void Main(string[] args)
-        {
+        {   
+            //March 20 2025
 
             //class and constructor 
             /* string name;
@@ -22,15 +23,19 @@ namespace infosoft_crash_course
 
              GameProfile GameProfile = new GameProfile(name,mmr,role); */
 
-            Students studs = new Students("Test", "Test2", "4th", "IT", "Manga", 88.6f, 90.8f);
+            /*Students studs = new Students("Test", "Test2", "4th", "IT", "Manga", 88.6f, 90.8f);
 
             Console.WriteLine(studs.introduceStudent());
             studs.evaluateGrade(100.6f, 108.8f);
 
             //encapsulation using automatic properties
-            Encapsulation encaps = new Encapsulation("name","active",23);
+            Encapsulation encaps = new Encapsulation("name","active",23); */
 
-           
+
+            //Inheritance 
+            Students studs = new Students("Angelo", "Pal", "4th", "IT", "Manga","Sir Mj", "CCE", 88.6f, 90.8f);
+
+            studs.gradeReport();
 
 
            
